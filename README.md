@@ -13,4 +13,6 @@ Other reference materials -
 2. (https://developers.google.com/ml-kit/vision/object-detection)
 3. (https://pub.dev/packages/google_ml_kit)
 
+## Preview
 
+<img src="https://github.com/DGgrx/object-detection/blob/master/preview.gif" height="400" />
