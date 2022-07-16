@@ -45,35 +45,16 @@ class _ObjectDetectorView extends State<ObjectDetectorView> {
       onImage: (inputImage) {
         processImage(inputImage);
       },
-      onScreenModeChanged: _onScreenModeChanged,
       initialDirection: CameraLensDirection.back,
     );
   }
 
-  void _onScreenModeChanged(ScreenMode mode) {
-    switch (mode) {
-      case ScreenMode.gallery:
-        _initializeDetector(DetectionMode.single);
-        return;
 
-      case ScreenMode.liveFeed:
-        _initializeDetector(DetectionMode.stream);
-        return;
-    }
-  }
 
   void _initializeDetector(DetectionMode mode) async {
     print('Set detector in mode: $mode');
 
-    // uncomment next lines if you want to use the default model
-    // final options = ObjectDetectorOptions(
-    //     mode: mode,
-    //     classifyObjects: true,
-    //     multipleObjects: true);
-    // _objectDetector = ObjectDetector(options: options);
 
-    // uncomment next lines if you want to use a local model
-    // make sure to add tflite model to assets/ml
     final path = 'assets/ml/lite-model_object_detection_mobile_object_labeler_v1_1.tflite';
     final modelPath = await _getModel(path);
     final options = LocalObjectDetectorOptions(
@@ -83,20 +64,6 @@ class _ObjectDetectorView extends State<ObjectDetectorView> {
       multipleObjects: true,
     );
     _objectDetector = ObjectDetector(options: options);
-
-    // uncomment next lines if you want to use a remote model
-    // make sure to add model to firebase
-    // final modelName = 'bird-classifier';
-    // final response =
-    //     await FirebaseObjectDetectorModelManager().downloadModel(modelName);
-    // print('Downloaded: $response');
-    // final options = FirebaseObjectDetectorOptions(
-    //   mode: mode,
-    //   modelName: modelName,
-    //   classifyObjects: true,
-    //   multipleObjects: true,
-    // );
-    // _objectDetector = ObjectDetector(options: options);
 
     _canProcess = true;
   }
@@ -123,7 +90,7 @@ class _ObjectDetectorView extends State<ObjectDetectorView> {
         'Object:  trackingId: ${object.trackingId} - ${object.labels.map((e) => e.text)}\n\n';
       }
       _text = text;
-      // TODO: set _customPaint to draw boundingRect on top of image
+
       _customPaint = null;
     }
     _isBusy = false;
