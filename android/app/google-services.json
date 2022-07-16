@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912395205933",
+    "project_id": "object-detection-d768e",
+    "storage_bucket": "object-detection-d768e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912395205933:android:0f0a5dc746383b144167a4",
+        "android_client_info": {
+          "package_name": "com.dibiyanas.object_detection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912395205933-kdt35sbegob81fllsaam42kclj7batm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB04kWisHP_J8kYzBW5c0aahsy4jz1h3uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912395205933-kdt35sbegob81fllsaam42kclj7batm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
